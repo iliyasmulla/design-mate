@@ -1,35 +1,45 @@
-export const logAnalyticsEvent = (eventName, payload = {}) => {
+// Cache location data so we only fetch it once per session
+let cachedLocation = null;
+
+const getLocation = async () => {
+    if (cachedLocation) return cachedLocation;
     try {
-        const scriptUrl = 'https://script.google.com/macros/s/AKfycbzLCbUAUEdyjIzGccM1uGaDBEVmEj0xYPFYhQKuJ55lco44yTbJE_sQB6JwcLoJ_M3g/exec';
+        const res = await fetch('https://ipapi.co/json/');
+        const data = await res.json();
+        cachedLocation = {
+            city: data.city || '',
+            region: data.region || '',
+            country: data.country_name || '',
+            ip: data.ip || '',
+            isp: data.org || ''
+        };
+    } catch {
+        cachedLocation = { city: '', region: '', country: '', ip: '', isp: '' };
+    }
+    return cachedLocation;
+};
 
-        // Convert payload to query string
-        const params = new URLSearchParams();
-        params.append('event', eventName);
-        params.append('timestamp', new Date().toISOString());
+// Pre-fetch location on load
+getLocation();
 
-        Object.keys(payload).forEach(key => {
-            params.append(key, payload[key]);
+export const logAnalyticsEvent = async (eventName) => {
+    try {
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbzVAUhBKZ-c1Hg8-Kgo7QDfyYUNAtITFtOWex8PcZG7-W3-0X0lgua7kWonayd5rq_U/exec';
+
+        const location = await getLocation();
+
+        const data = JSON.stringify({
+            event: eventName,
+            timestamp: new Date().toISOString(),
+            referrer: document.referrer || '(direct)',
+            userAgent: navigator.userAgent,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            platform: navigator.platform,
+            ...location
         });
 
-        // Fire and forget GET request
-        fetch(`${scriptUrl}?${params.toString()}`, {
-            method: 'GET',
-            mode: 'no-cors'
-        }).catch(() => { });
-
-        // Try POST as well depending on how the script is configured
-        const formData = new FormData();
-        formData.append('event', eventName);
-        formData.append('timestamp', new Date().toISOString());
-        Object.keys(payload).forEach(key => {
-            formData.append(key, payload[key]);
-        });
-
-        fetch(scriptUrl, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: formData
-        }).catch(() => { });
+        navigator.sendBeacon?.(scriptUrl, data) ||
+            fetch(scriptUrl, { method: 'POST', mode: 'no-cors', body: data, keepalive: true }).catch(() => { });
 
     } catch (error) {
         console.error('Analytics error:', error);
