@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import logoIcon from './assets/logo-icon.png';
 import Hero from './components/Hero';
 import Features from './components/Features';
-import ScrollBuild from './components/ScrollBuild';
+
 import Professionals from './components/Professionals';
 import WaitlistForm from './components/WaitlistForm';
 import { motion, useScroll, useSpring } from 'framer-motion';
@@ -22,106 +23,22 @@ function App() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-deep)' }}>
-      {/* Scroll Progress Bar */}
-      <motion.div
-        style={{
-          scaleX,
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '3px',
-          background: 'linear-gradient(90deg, var(--accent-blue), var(--accent-violet))',
-          transformOrigin: '0%',
-          zIndex: 100,
-        }}
-      />
-
-      {/* Navigation */}
-      <nav
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 50,
-          background: 'rgba(30,41,59,0.8)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          borderBottom: '1px solid var(--border-subtle)',
-        }}
-      >
-        <div
-          className="ic-container"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '1rem 1.5rem',
-          }}
-        >
-          {/* Logo */}
-          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-            <div
-              style={{
-                width: '2.5rem',
-                height: '2.5rem',
-                background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-violet))',
-                borderRadius: '0.6rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#ffffff',
-                fontWeight: 800,
-                fontSize: '1.2rem',
-                boxShadow: '0 4px 12px var(--accent-glow)',
-              }}
-            >
-              IC
-            </div>
-            <span
-              style={{
-                fontSize: '1.4rem',
-                fontWeight: 800,
-                color: '#ffffff',
-                letterSpacing: '-0.03em',
-                fontFamily: 'var(--font-sans)',
-              }}
-            >
-              infra<span style={{ color: 'var(--accent-blue)' }}>connect</span>
-            </span>
-          </a>
-
-          {/* Nav CTA */}
-          <div className="hidden md:flex" style={{ alignItems: 'center' }}>
-            <a
-              href="#waitlist"
-              className="ic-btn ic-btn-primary"
-              style={{ padding: '0.6rem 1.25rem', fontSize: '0.85rem' }}
-              onClick={() => logAnalyticsEvent('click_get_early_access')}
-            >
-              Get Early Access
-            </a>
-          </div>
-        </div>
-      </nav>
-
       <main>
         <Hero />
         <Features />
-        <ScrollBuild />
+
         <Professionals />
 
         {/* Trust & Verification Section */}
         <section
-          className="ic-section"
+          className="dm-section"
           style={{
             backgroundColor: 'var(--bg-dark)',
             borderTop: '1px solid var(--border-subtle)',
             borderBottom: '1px solid var(--border-subtle)',
           }}
         >
-          <div className="ic-container">
+          <div className="dm-container">
             <div style={{ maxWidth: '42rem', margin: '0 auto' }}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -213,7 +130,7 @@ function App() {
           padding: '3rem 0',
         }}
       >
-        <div className="ic-container">
+        <div className="dm-container">
           <div
             style={{
               display: 'flex',
@@ -224,57 +141,25 @@ function App() {
             }}
           >
             {/* Logo small */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', opacity: 0.6 }}>
-              <div
-                style={{
-                  width: '1.75rem',
-                  height: '1.75rem',
-                  background: 'var(--accent-blue)',
-                  borderRadius: '0.4rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#ffffff',
-                  fontWeight: 800,
-                  fontSize: '0.7rem',
-                }}
-              >
-                IC
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+              <img src={logoIcon} alt="Logo" style={{ height: '1.75rem', width: 'auto' }} />
               <span
                 style={{
                   fontWeight: 800,
-                  fontSize: '1rem',
+                  fontSize: '1.1rem',
                   color: '#ffffff',
                   fontFamily: 'var(--font-sans)',
                 }}
               >
-                infra<span style={{ color: 'var(--accent-blue)' }}>connect</span>
+                Design<span style={{ color: 'var(--accent-blue)' }}>Mate</span>
               </span>
             </div>
 
             <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500 }}>
-              &copy; 2025 InfraConnect. All rights reserved.
+              &copy; 2026 DesignMate. All rights reserved.
             </p>
 
-            <div style={{ display: 'flex', gap: '1.5rem' }}>
-              {['Privacy', 'Terms', 'Contact'].map((l) => (
-                <a
-                  key={l}
-                  href="#"
-                  style={{
-                    fontSize: '0.85rem',
-                    fontWeight: 500,
-                    color: 'var(--text-muted)',
-                    textDecoration: 'none',
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = '#ffffff')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
-                >
-                  {l}
-                </a>
-              ))}
-            </div>
+            <div />
           </div>
         </div>
       </footer>

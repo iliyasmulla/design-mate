@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { logAnalyticsEvent } from '../utils/analytics';
+import logoIcon from '../assets/logo-icon.png';
 import heroImg from '../assets/hero.png';
 
 const Hero = () => {
@@ -67,7 +68,7 @@ const Hero = () => {
 				/>
 			</div>
 
-			<div className="ic-container relative z-10" style={{ paddingTop: '7rem' }}>
+			<div className="dm-container relative z-10" style={{ paddingTop: '7rem' }}>
 				<div style={{ maxWidth: '52rem' }}>
 					<motion.div
 						initial={{ opacity: 0, y: 40 }}
@@ -77,11 +78,11 @@ const Hero = () => {
 						<h1
 							className="mb-6"
 							style={{
-								fontSize: 'clamp(3rem, 6vw, 5rem)',
-								lineHeight: 1.05,
+								fontSize: 'clamp(2.25rem, 8vw, 4.5rem)',
+								lineHeight: 1.1,
 								fontWeight: 800,
 								color: '#ffffff',
-								letterSpacing: '-0.03em',
+								letterSpacing: '-0.04em',
 							}}
 						>
 							Build Your Dream.<br />
@@ -104,14 +105,14 @@ const Hero = () => {
 							transition={{ delay: 0.4, duration: 0.8 }}
 							className="mb-10"
 							style={{
-								fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
-								maxWidth: '40rem',
-								lineHeight: 1.6,
-								color: 'var(--text-muted)',
+								fontSize: 'clamp(1rem, 4vw, 1.15rem)',
+								maxWidth: '36rem',
+								lineHeight: 1.5,
+								color: 'rgba(255,255,255,0.7)',
 							}}
 						>
 							Post your construction project and receive competitive bids from
-							verified architects, contractors, and designers — all in one place.
+							verified professionals — all in one place.
 						</motion.p>
 
 						<motion.div
@@ -122,14 +123,14 @@ const Hero = () => {
 						>
 							<a
 								href="#waitlist"
-								className="ic-btn ic-btn-primary"
+								className="dm-btn dm-btn-primary"
 								style={{ padding: '1rem 2rem', fontSize: '1.05rem' }}
 								onClick={() => logAnalyticsEvent('click_join_waitlist')}
 							>
 								Join the Waitlist <ArrowRight size={20} />
 							</a>
-							<a href="#how-it-works" className="ic-btn ic-btn-glass" style={{ padding: '1rem 2rem', fontSize: '1.05rem' }}>
-								<Play size={18} style={{ fill: 'currentColor' }} /> How It Works
+							<a href="#how-it-works" className="dm-btn dm-btn-glass" style={{ padding: '1rem 2rem', fontSize: '1.05rem' }}>
+								How It Works
 							</a>
 						</motion.div>
 					</motion.div>

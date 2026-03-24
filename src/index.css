@@ -34,27 +34,29 @@ h6 {
   /* Modern tight tracking */
 }
 
-/* ── Modern Charcoal/Grey Tokens ── */
+/* ── DesignMate Logo Tokens ── */
 :root {
-  --bg-deep: #334155;
-  /* Slate 700 */
+  --bg-deep: #0f172a;
+  /* Deep Navy */
   --bg-dark: #1e293b;
   /* Slate 800 */
   --bg-card: rgba(30, 41, 59, 0.7);
-  --accent-blue: #38bdf8;
-  /* Light blue accent */
-  --accent-violet: #818cf8;
-  /* Indigo accent */
-  --accent-cyan: #22d3ee;
+  
+  --accent-blue: #1A56A6;
+  /* Royal Blue from Logo */
+  --accent-cyan: #3BAFDA;
+  /* Brighter complimentary blue */
+  --accent-violet: #4A90E2;
+  
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
 
   --border-subtle: rgba(255, 255, 255, 0.1);
-  --border-glow: rgba(56, 189, 248, 0.3);
+  --border-glow: rgba(26, 86, 166, 0.3);
 }
 
 /* ── Custom utility classes ── */
-.ic-container {
+.dm-container {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
@@ -63,7 +65,7 @@ h6 {
   padding-right: 1.5rem;
 }
 
-.ic-btn {
+.dm-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -81,22 +83,22 @@ h6 {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ic-btn-primary {
+.dm-btn-primary {
   background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-violet) 100%);
   color: #ffffff;
   box-shadow: 0 4px 20px 0 rgba(59, 130, 246, 0.3);
 }
 
-.ic-btn-primary:hover {
+.dm-btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px 0 rgba(139, 92, 246, 0.4);
 }
 
-.ic-btn-primary:active {
+.dm-btn-primary:active {
   transform: translateY(0);
 }
 
-.ic-btn-glass {
+.dm-btn-glass {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -104,14 +106,14 @@ h6 {
   border: 1px solid var(--border-subtle);
 }
 
-.ic-btn-glass:hover {
+.dm-btn-glass:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--accent-blue);
   color: var(--accent-blue);
   transform: translateY(-2px);
 }
 
-.ic-glass-card {
+.dm-glass-card {
   background: var(--bg-card);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -119,15 +121,15 @@ h6 {
   border-radius: 1rem;
 }
 
-.ic-section {
+.dm-section {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
 
 @media (max-width: 768px) {
-  .ic-section {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+  .dm-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 

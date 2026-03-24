@@ -15,7 +15,7 @@ const steps = [
     {
         title: 'Receive Qualified Bids',
         description:
-            'Get custom proposals from verified architects and contractors ready to bring your vision to life.',
+            'Get custom proposals from verified professionals ready to bring your vision to life.',
         image: receiveIcon,
         step: '02',
     },
@@ -41,10 +41,10 @@ const Features = () => {
     return (
         <section
             id="how-it-works"
-            className="ic-section"
+            className="dm-section"
             style={{ backgroundColor: 'var(--bg-deep)' }}
         >
-            <div className="ic-container">
+            <div className="dm-container">
                 {/* Header */}
                 <div className="text-center" style={{ marginBottom: '4rem' }}>
                     <motion.span
@@ -82,7 +82,7 @@ const Features = () => {
                             viewport={{ once: true, margin: '-50px' }}
                             variants={cardVariants}
                             whileHover={{ y: -8 }}
-                            className="ic-glass-card"
+                            className="dm-glass-card"
                             style={{
                                 position: 'relative',
                                 overflow: 'hidden',

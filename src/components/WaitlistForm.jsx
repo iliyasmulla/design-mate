@@ -70,7 +70,7 @@ const WaitlistForm = () => {
     return (
         <section
             id="waitlist"
-            className="ic-section relative overflow-hidden"
+            className="dm-section relative overflow-hidden"
             style={{
                 background: 'linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%)',
             }}
@@ -101,9 +101,9 @@ const WaitlistForm = () => {
                 }}
             />
 
-            <div className="ic-container relative z-10">
+            <div className="dm-container relative z-10">
                 <div
-                    className="ic-glass-card mx-auto"
+                    className="dm-glass-card mx-auto"
                     style={{
                         maxWidth: '38rem',
                         padding: 'clamp(2.5rem, 5vw, 4rem)',
@@ -151,7 +151,7 @@ const WaitlistForm = () => {
                                         </span>
                                     </h2>
 
-                                    <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6 }}>
+                                    <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.5 }}>
                                         Be the first to connect with verified professionals when we launch in your city.
                                     </p>
                                 </div>
@@ -166,7 +166,7 @@ const WaitlistForm = () => {
                                         onFocus={handleFocus}
                                         onBlur={handleBlur}
                                         required
-                                        style={inputStyle}
+                                        style={{ ...inputStyle, padding: '1rem 1.25rem' }}
                                     />
 
                                     <input
@@ -177,7 +177,7 @@ const WaitlistForm = () => {
                                         onChange={handleChange}
                                         onFocus={handleFocus}
                                         onBlur={handleBlur}
-                                        style={inputStyle}
+                                        style={{ ...inputStyle, padding: '1rem 1.25rem' }}
                                     />
 
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -189,7 +189,7 @@ const WaitlistForm = () => {
                                             onChange={handleChange}
                                             onFocus={handleFocus}
                                             onBlur={handleBlur}
-                                            style={inputStyle}
+                                            style={{ ...inputStyle, padding: '1rem 1.25rem' }}
                                         />
 
                                         <select
@@ -210,11 +210,9 @@ const WaitlistForm = () => {
                                             <option value="" disabled>Profession</option>
                                             <option value="Homeowner">Homeowner</option>
                                             <option value="Architect">Architect</option>
-                                            <option value="Contractor">Contractor</option>
                                             <option value="Interior Designer">Interior Designer</option>
                                             <option value="Structural Engineer">Structural Engineer</option>
                                             <option value="Landscape Designer">Landscape Designer</option>
-                                            <option value="MEP Consultant">MEP Consultant</option>
                                             <option value="other">Other</option>
                                         </select>
                                     </div>
@@ -244,7 +242,7 @@ const WaitlistForm = () => {
                                     <button
                                         type="submit"
                                         disabled={loading}
-                                        className="ic-btn ic-btn-primary"
+                                        className="dm-btn dm-btn-primary"
                                         style={{
                                             width: '100%',
                                             padding: '1rem',

@@ -1,26 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Compass, Home, Layers, Trees, Zap } from 'lucide-react';
+import { Compass, Home, Trees, Zap } from 'lucide-react';
 
 const categories = [
 	{ name: 'Architects', icon: Compass },
-	{ name: 'Contractors', icon: Building2 },
 	{ name: 'Interior Designers', icon: Home },
 	{ name: 'Structural Engineers', icon: Zap },
 	{ name: 'Landscape Designers', icon: Trees },
-	{ name: 'MEP Consultants', icon: Layers },
 ];
 
 const Professionals = () => {
 	return (
 		<section
-			className="ic-section"
+			className="dm-section"
 			style={{
 				backgroundColor: 'var(--bg-dark)',
 				borderTop: '1px solid var(--border-subtle)',
 			}}
 		>
-			<div className="ic-container">
+			<div className="dm-container">
 				{/* Header */}
 				<div
 					className="flex flex-col md:flex-row md:items-end justify-between gap-6"
@@ -67,7 +65,7 @@ const Professionals = () => {
 				</div>
 
 				{/* Cards Grid */}
-				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 					{categories.map((cat, i) => {
 						const Icon = cat.icon;
 						return (
@@ -78,7 +76,7 @@ const Professionals = () => {
 								viewport={{ once: true }}
 								transition={{ delay: i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
 								whileHover={{ y: -8 }}
-								className="ic-glass-card"
+								className="dm-glass-card"
 								style={{
 									padding: '2rem 1rem',
 									textAlign: 'center',

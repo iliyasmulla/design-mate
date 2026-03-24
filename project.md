@@ -1,6 +1,6 @@
-# Construction Project Marketplace Platform
+# DesignMate Construction Platform
 
-A platform that connects **homeowners with trusted construction professionals** such as architects, contractors, and designers.
+A premium platform that connects **homeowners with trusted construction professionals** such as architects and designers.
 
 ---
 
@@ -10,19 +10,17 @@ A platform that connects **homeowners with trusted construction professionals** 
 - House Owners
 
 ## Professionals
-- Contractors
 - Architects
 - 3D Visualizers
 - Interior Designers
 - Structural Engineers
-- MEP Consultants
 - Landscape Designers
 
 ---
 
-# Core Product Vision
+# Core Product Vision (Mobile-First)
 
-Make it easy for homeowners to **post construction projects** and get **qualified professionals to apply**, compare bids, and hire the right expert.
+Make it easy for homeowners to **post construction projects** and get **qualified professionals to apply**, compare bids, and hire the right expert — optimized for the mobile experience.
 
 ---
 
@@ -229,7 +227,7 @@ The landing page should include:
 
 ## Hero Section
 Headline:
-**"Find the Right Architect or Contractor for Your Dream Project"**
+**"Find the Right Architect or Designer for Your Dream Project"**
 
 Subheadline:
 Post your project and receive bids from verified professionals.
@@ -253,7 +251,6 @@ Modern house construction visuals or architecture video.
 
 ### Professionals on the Platform
 - Architects
-- Contractors
 - Interior Designers
 - Structural Engineers
 - Landscape Designers
