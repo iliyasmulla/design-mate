@@ -143,7 +143,6 @@ function App() {
                         <span className="text-2xl font-black tracking-tighter text-white block leading-none">
                           Design<span className="text-white/60">-Mate</span>
                         </span>
-                        <span className="text-xs uppercase tracking-[0.2em] font-semibold text-white/40 mt-2 block">Luxury Marketplace</span>
                     </div>
                   </div>
                   <p className="text-white/50 text-sm leading-relaxed max-w-sm mb-8">
@@ -152,7 +151,7 @@ function App() {
                   
                   {/* Socials from USP Markdown */}
                   <div className="flex items-center gap-4">
-                    <a href="https://www.instagram.com/desgin_mate.in/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-all"><Instagram size={18} /></a>
+                    <a href="https://www.instagram.com/desginmate.in?igsh=MXBsYWxjcDRqbXdxZw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-all"><Instagram size={18} /></a>
                     <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-all"><Facebook size={18} /></a>
                     <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-all"><Twitter size={18} /></a>
                     <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-all"><MessageSquare size={18} /></a>

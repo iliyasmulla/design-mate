@@ -34,7 +34,7 @@ export function ArchitectHero() {
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="flex flex-col items-center text-center max-w-5xl mb-6"
                 >
-                    <h1 className="text-6xl sm:text-8xl md:text-[9rem] font-black tracking-tighter leading-[1] drop-shadow-2xl mb-6">
+                    <h1 className="text-4xl sm:text-7xl md:text-[9rem] font-black tracking-tighter leading-[1] drop-shadow-2xl mb-6 whitespace-nowrap">
                         <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/80">
                             Design-
                         </span>
@@ -51,7 +51,7 @@ export function ArchitectHero() {
                     transition={{ duration: 1, delay: 0.3 }}
                     className="text-base sm:text-lg md:text-xl text-white/70 mb-12 leading-relaxed font-light max-w-2xl text-center mx-auto drop-shadow-md"
                 >
-                    Connect instantly with strictly verified professionals. Post your project for free and get competitive bids today.
+                    Connect instantly with verified professionals. Post your project for free and get competitive bids today.
                 </motion.p>
 
                 {/* Call to Actions */}
@@ -63,13 +63,13 @@ export function ArchitectHero() {
                 >
                     <a
                         href="#waitlist"
-                        className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.3)] text-lg"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-10 sm:py-4 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.3)] text-base sm:text-lg"
                     >
-                        Join the Waitlist <ArrowRight size={22} />
+                        Join the Waitlist <ArrowRight className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
                     </a>
                     <a 
                         href="#how-it-works" 
-                        className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white/10 text-white font-semibold border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors text-lg"
+                        className="inline-flex items-center justify-center px-6 py-3 sm:px-10 sm:py-4 rounded-full bg-white/10 text-white font-semibold border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors text-base sm:text-lg"
                     >
                         How It Works
                     </a>
