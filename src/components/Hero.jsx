@@ -2,8 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { logAnalyticsEvent } from '../utils/analytics';
-import logoIcon from '../assets/logo-icon.png';
 import heroImg from '../assets/hero.png';
+
+const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.1,
+        }
+    }
+};
+
+const fadeUpItem = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+};
 
 const Hero = () => {
 	return (
@@ -68,21 +83,22 @@ const Hero = () => {
 				/>
 			</div>
 
-			<div className="dm-container relative z-10" style={{ paddingTop: '7rem' }}>
+			<div className="dm-container relative z-10" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
 				<div style={{ maxWidth: '52rem' }}>
 					<motion.div
-						initial={{ opacity: 0, y: 40 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+						variants={staggerContainer}
+						initial="hidden"
+						animate="show"
 					>
-						<h1
+						<motion.h1
+                            variants={fadeUpItem}
 							className="mb-6"
 							style={{
-								fontSize: 'clamp(2.25rem, 8vw, 4.5rem)',
+								fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
 								lineHeight: 1.1,
 								fontWeight: 800,
 								color: '#ffffff',
-								letterSpacing: '-0.04em',
+								letterSpacing: '-0.03em',
 							}}
 						>
 							Build Your Dream.<br />
@@ -97,18 +113,16 @@ const Hero = () => {
 							>
 								Find the Right Expert.
 							</span>
-						</h1>
+						</motion.h1>
 
 						<motion.p
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							transition={{ delay: 0.4, duration: 0.8 }}
+                            variants={fadeUpItem}
 							className="mb-10"
 							style={{
-								fontSize: 'clamp(1rem, 4vw, 1.15rem)',
+								fontSize: 'clamp(1.05rem, 4vw, 1.15rem)',
 								maxWidth: '36rem',
-								lineHeight: 1.5,
-								color: 'rgba(255,255,255,0.7)',
+								lineHeight: 1.6,
+								color: 'rgba(255,255,255,0.8)',
 							}}
 						>
 							Post your construction project and receive competitive bids from
@@ -116,22 +130,28 @@ const Hero = () => {
 						</motion.p>
 
 						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ delay: 0.6, duration: 0.8 }}
+                            variants={fadeUpItem}
 							className="flex flex-col sm:flex-row gap-4"
 						>
-							<a
+							<motion.a
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
 								href="#waitlist"
 								className="dm-btn dm-btn-primary"
 								style={{ padding: '1rem 2rem', fontSize: '1.05rem' }}
 								onClick={() => logAnalyticsEvent('click_join_waitlist')}
 							>
 								Join the Waitlist <ArrowRight size={20} />
-							</a>
-							<a href="#how-it-works" className="dm-btn dm-btn-glass" style={{ padding: '1rem 2rem', fontSize: '1.05rem' }}>
+							</motion.a>
+							<motion.a 
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                href="#how-it-works" 
+                                className="dm-btn dm-btn-glass" 
+                                style={{ padding: '1rem 2rem', fontSize: '1.05rem' }}
+                            >
 								How It Works
-							</a>
+							</motion.a>
 						</motion.div>
 					</motion.div>
 				</div>

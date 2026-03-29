@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Compass, Home, Trees, Zap } from 'lucide-react';
+import { Compass, Home, Zap, Camera, PenTool, Box } from 'lucide-react';
 
 const categories = [
 	{ name: 'Architects', icon: Compass },
 	{ name: 'Interior Designers', icon: Home },
 	{ name: 'Structural Engineers', icon: Zap },
-	{ name: 'Landscape Designers', icon: Trees },
+	{ name: 'Architectural Photography', icon: Camera },
+	{ name: 'Draftsman', icon: PenTool },
+	{ name: '3D Visualizers', icon: Box },
 ];
 
 const Professionals = () => {
@@ -48,24 +50,11 @@ const Professionals = () => {
 							Verified Professionals Ready to Build
 						</motion.h2>
 					</div>
-					<motion.p
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						viewport={{ once: true }}
-						style={{
-							color: 'var(--text-muted)',
-							maxWidth: '24rem',
-							fontSize: '1rem',
-							lineHeight: 1.6,
-						}}
-					>
-						Every professional undergoes a rigorous portfolio and identity
-						review before joining our platform.
-					</motion.p>
+
 				</div>
 
 				{/* Cards Grid */}
-				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+				<div className="grid grid-cols-2 md:grid-cols-3 gap-5">
 					{categories.map((cat, i) => {
 						const Icon = cat.icon;
 						return (
@@ -85,7 +74,7 @@ const Professionals = () => {
 								}}
 								onMouseOver={(e) => {
 									e.currentTarget.style.borderColor = 'var(--border-glow)';
-									e.currentTarget.style.background = 'rgba(59, 130, 246, 0.05)';
+									e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
 								}}
 								onMouseOut={(e) => {
 									e.currentTarget.style.borderColor = 'var(--border-subtle)';
@@ -98,9 +87,9 @@ const Professionals = () => {
 										width: '3.5rem',
 										height: '3.5rem',
 										borderRadius: '0.75rem',
-										backgroundColor: 'rgba(59, 130, 246, 0.1)',
-										border: '1px solid rgba(59, 130, 246, 0.2)',
-										color: 'var(--accent-blue)',
+										backgroundColor: 'rgba(255, 255, 255, 0.03)',
+										border: '1px solid rgba(255, 255, 255, 0.1)',
+										color: '#ffffff',
 										marginBottom: '1.25rem',
 									}}
 								>

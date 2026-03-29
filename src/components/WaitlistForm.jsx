@@ -84,7 +84,7 @@ const WaitlistForm = () => {
                     width: '30rem',
                     height: '30rem',
                     borderRadius: '50%',
-                    background: 'rgba(59, 130, 246, 0.1)',
+                    background: 'rgba(255, 255, 255, 0.03)',
                     filter: 'blur(80px)',
                 }}
             />
@@ -96,7 +96,7 @@ const WaitlistForm = () => {
                     width: '25rem',
                     height: '25rem',
                     borderRadius: '50%',
-                    background: 'rgba(139, 92, 246, 0.1)',
+                    background: 'rgba(255, 255, 255, 0.03)',
                     filter: 'blur(100px)',
                 }}
             />
@@ -123,13 +123,13 @@ const WaitlistForm = () => {
                                     <div
                                         className="inline-flex items-center gap-2"
                                         style={{
-                                            background: 'rgba(59, 130, 246, 0.1)',
-                                            border: '1px solid rgba(59, 130, 246, 0.2)',
+                                            background: 'rgba(255, 255, 255, 0.05)',
+                                            border: '1px solid rgba(255, 255, 255, 0.1)',
                                             padding: '0.4rem 1rem',
                                             borderRadius: '2rem',
                                             fontSize: '0.8rem',
                                             fontWeight: 600,
-                                            color: 'var(--accent-blue)',
+                                            color: '#ffffff',
                                             marginBottom: '1.25rem',
                                         }}
                                     >
@@ -146,7 +146,7 @@ const WaitlistForm = () => {
                                         }}
                                     >
                                         Join the{' '}
-                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
+                                        <span className="text-white">
                                             Waitlist
                                         </span>
                                     </h2>

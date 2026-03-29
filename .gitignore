@@ -25,3 +25,6 @@ dist-ssr
 node_modules/
 dist/
 .env
+.agents
+skills-lock.json
+project.idea.md

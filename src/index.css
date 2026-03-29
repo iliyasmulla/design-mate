@@ -36,23 +36,19 @@ h6 {
 
 /* ── DesignMate Logo Tokens ── */
 :root {
-  --bg-deep: #0f172a;
-  /* Deep Navy */
-  --bg-dark: #1e293b;
-  /* Slate 800 */
-  --bg-card: rgba(30, 41, 59, 0.7);
+  --bg-deep: #030303;
+  --bg-dark: #0a0a0a;
+  --bg-card: rgba(255, 255, 255, 0.02);
   
-  --accent-blue: #1A56A6;
-  /* Royal Blue from Logo */
-  --accent-cyan: #3BAFDA;
-  /* Brighter complimentary blue */
-  --accent-violet: #4A90E2;
+  --accent-blue: #ffffff;
+  --accent-cyan: rgba(255, 255, 255, 0.8);
+  --accent-violet: rgba(255, 255, 255, 0.6);
   
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.4);
 
-  --border-subtle: rgba(255, 255, 255, 0.1);
-  --border-glow: rgba(26, 86, 166, 0.3);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(255, 255, 255, 0.15);
 }
 
 /* ── Custom utility classes ── */
@@ -70,12 +66,11 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 0.5rem;
-  /* Modern slightly rounded edges, not pill */
+  padding: 1rem 2rem;
+  border-radius: 9999px;
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   line-height: 1;
   cursor: pointer;
   border: none;
@@ -84,18 +79,18 @@ h6 {
 }
 
 .dm-btn-primary {
-  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-violet) 100%);
-  color: #ffffff;
-  box-shadow: 0 4px 20px 0 rgba(59, 130, 246, 0.3);
+  background: white;
+  color: #030303;
+  box-shadow: none;
 }
 
 .dm-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px 0 rgba(139, 92, 246, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px 0 rgba(255, 255, 255, 0.15);
 }
 
 .dm-btn-primary:active {
-  transform: translateY(0);
+  transform: scale(0.95);
 }
 
 .dm-btn-glass {
@@ -119,6 +114,25 @@ h6 {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-subtle);
   border-radius: 1rem;
+}
+
+/* ── Navbar styles ── */
+.dm-navbar-transparent {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.dm-navbar-scrolled {
+  background: rgba(15, 23, 42, 0.85); /* bg-deep with opacity */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dm-btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
 }
 
 .dm-section {
